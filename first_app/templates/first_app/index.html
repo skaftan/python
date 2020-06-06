@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First App</title>
+    <title>First App home page</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
 </head>
 <body>
-    <h1>Hello, this is index.html!</h1>
+    <h1>Hi, this is a picture of basketball</h1>
+    <img src="{% static "images/basketball.jpg" %}" alt="Something is wrong">
+    <br />
+
     {{ insert_me }}
     
 </body>
