@@ -1,3 +1,9 @@
 h1{
     color: red;
 }
+table, th, td, tr{
+    border: 2px solid black;
+}
+.djangotwo{
+    border: 1px solid blue;
+}

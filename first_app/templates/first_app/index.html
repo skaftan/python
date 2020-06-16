@@ -4,17 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First App home page</title>
+    <title>First App level Two home page</title>
     <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
 </head>
 <body>
-    <h1>Hi, this is a picture of basketball</h1>
-    <img src="{% static "images/basketball.jpg" %}" alt="Something is wrong">
-    <br />
+    <h1>Connecting models with templates</h1>
 
-    {{ insert_me }}
-    <br />
-    {{ insert_two }}
+    <h2>Here are your access records:</h2>
+
+    <div class="djangotwo">
+        {% if access_records %}
+        <table class="djangotwo">
+            <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+            </thead>
+            {% for acc in access_records %}
+            <tr>
+                <td>{{ acc.name }}</td>
+                <td>{{ acc.date }}</td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+
+        {% else %}
+            <p>NO ACCESS RECORDS FOUND!</p>
+        {% endif %}
+
+
+    </div>
     
 </body>
 </html>
