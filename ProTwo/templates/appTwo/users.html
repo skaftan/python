@@ -4,23 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Users of appTwo</h1>
-    {% if users %}
+    <div class="container">
+        <h1>Please sign up here</h1>
+        <form method="POST">
+            {{ form.as_p }}
+            {%csrf_token %}
+            <input type="submit" class='btn btn-primary' value="Submit">
 
-    <ol>
-        {% for person in users %}
-        <li>User info</li>
-            <ul>
-                <li>First Name: {{ person.first_name }}</li>
-                <li>Last Name: {{ person.last_name }}</li>
-                <li>Email: {{ person.email }}</li>
-            </ul>
-        {% endfor %}
 
-    </ol>
-    {% endif %}
+        </form>
+
+    </div>
     
 </body>
 </html>
